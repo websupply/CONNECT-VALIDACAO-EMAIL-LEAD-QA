@@ -1,0 +1,560 @@
+{
+  "info": {
+    "_postman_id": "8c90d756-0248-464f-a4a7-08a540c12b2a",
+    "name": "[QA] Testes - Remover Validação Obrigatória de E-mail",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56206216",
+    "_collection_link": "https://go.postman.co/collection/56206216-8c90d756-0248-464f-a4a7-08a540c12b2a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Smoke",
+      "item": [
+        {
+          "name": "[SMOKE]  Criação de lead com e-mail inválido (sucesso)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Success true\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.success).to.be.true;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de sucesso correta\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.message).to.eql(\"Lead recebido com sucesso.\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Error é null\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.error).to.be.null;\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "": true
+            }
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Lead teste {{tsLead}}\",\r\n    \"email\": \"emailerrado\",\r\n    \"whatsappNumero\": \"{{whatsapp}}\",\r\n    \"origem\": \"Site Primarca\",\r\n    \"CampanhaCod\": \"\",\r\n    \"CampanhaNome\": \"\",\r\n    \"cnpjEmpresa\": \"63078489000134\",\r\n    \"EmailResponsavel\": null,\r\n    \"obsEvento\": \"cenario 1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.homologacao.websupplyconnect.com/api/Lead/crawler",
+              "protocol": "https",
+              "host": [
+                "api",
+                "homologacao",
+                "websupplyconnect",
+                "com"
+              ],
+              "path": [
+                "api",
+                "Lead",
+                "crawler"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "[SMOKE]  Criação de lead com e-mail inválido (sucesso)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "{{apiKey}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \"Lead teste {{tsLead}}\",\r\n    \"email\": \"emailerrado\",\r\n    \"whatsappNumero\": \"{{whatsapp}}\",\r\n    \"origem\": \"Site Primarca\",\r\n    \"CampanhaCod\": \"\",\r\n    \"CampanhaNome\": \"\",\r\n    \"cnpjEmpresa\": \"63078489000134\",\r\n    \"EmailResponsavel\": null,\r\n    \"obsEvento\": \"cenario 1\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://api.homologacao.websupplyconnect.com/api/Lead/crawler",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "homologacao",
+                    "websupplyconnect",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "Lead",
+                    "crawler"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 15 Jul 2026 18:17:22 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "request-context",
+                  "value": "appId=cid-v1:7d93dc8c-4935-4a9a-a56f-3cc1f303f142"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "nel",
+                  "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+                },
+                {
+                  "key": "report-to",
+                  "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=F6UaqRbcOJrpgOnmhszzZCvRxTns2KZ7etzg%2BvjQf0ZsUsxD6VADQ8J4Gg1OOSC1ZdxJtjYEnuUcOevpiIHH0be3rrcBI4CobvCiucWuK1U%2FqbF7m2RjpQIDoaukaFfYlZBcxv3S%2BTjAYTkJFthuQ07cDVxYiQ%3D%3D\"}]}"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a1bac37dcfa6013a-GRU"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Lead recebido com sucesso.\",\n    \"data\": {},\n    \"error\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "[SMOKE]   Criação de lead sem e-mail no payload via integração (sucesso)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Success true\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.success).to.be.true;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de sucesso correta\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.message).to.eql(\"Lead recebido com sucesso.\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Error é null\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.error).to.be.null;\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "": true
+            }
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Lead teste {{tsLead}}\",\r\n    \"email\": \"\",\r\n    \"whatsappNumero\": \"{{whatsapp}}\",\r\n    \"origem\": \"Site Primarca\",\r\n    \"CampanhaCod\": \"\",\r\n    \"CampanhaNome\": \"\",\r\n    \"cnpjEmpresa\": \"63078489000134\",\r\n    \"EmailResponsavel\": null,\r\n    \"obsEvento\": \"cenario 2\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.homologacao.websupplyconnect.com/api/Lead/crawler",
+              "protocol": "https",
+              "host": [
+                "api",
+                "homologacao",
+                "websupplyconnect",
+                "com"
+              ],
+              "path": [
+                "api",
+                "Lead",
+                "crawler"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "[SMOKE]   Criação de lead sem e-mail no payload via integração (sucesso)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "{{apiKey}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \"Lead teste {{tsLead}}\",\r\n    \"email\": \"\",\r\n    \"whatsappNumero\": \"{{whatsapp}}\",\r\n    \"origem\": \"Site Primarca\",\r\n    \"CampanhaCod\": \"\",\r\n    \"CampanhaNome\": \"\",\r\n    \"cnpjEmpresa\": \"63078489000134\",\r\n    \"EmailResponsavel\": null,\r\n    \"obsEvento\": \"cenario 2\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://api.homologacao.websupplyconnect.com/api/Lead/crawler",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "homologacao",
+                    "websupplyconnect",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "Lead",
+                    "crawler"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 15 Jul 2026 18:17:15 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "request-context",
+                  "value": "appId=cid-v1:7d93dc8c-4935-4a9a-a56f-3cc1f303f142"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "nel",
+                  "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+                },
+                {
+                  "key": "report-to",
+                  "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2BsG9%2FBRhnGQpu56oVie6Vou9dfW3PjpWL3GXolk4%2BX9ZSi19QappVk8AiXsxuwfI0eTOOCNW00PRiPLxriYhWusAG7Q15K6C4pdht04uYz%2Fp7QxMSBcCEC8eSXxlrZl9RZ%2BfAKMK8%2FiDmQWgV7taCaa96caXuQ%3D%3D\"}]}"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a1bac3516dfa013a-GRU"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Lead recebido com sucesso.\",\n    \"data\": {},\n    \"error\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "[SMOKE]   Criação de lead com e-mail válido via integração (sucesso)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Success true\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.success).to.be.true;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de sucesso correta\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.message).to.eql(\"Lead recebido com sucesso.\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Error é null\", function () {\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json.error).to.be.null;\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "": true
+            }
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Lead teste {{tsLead}}\",\r\n    \"email\": \"arthuras1@hotmail.com\",\r\n    \"whatsappNumero\": \"{{whatsapp}}\",\r\n    \"origem\": \"Site Primarca\",\r\n    \"CampanhaCod\": \"\",\r\n    \"CampanhaNome\": \"\",\r\n    \"cnpjEmpresa\": \"63078489000134\",\r\n    \"EmailResponsavel\": null,\r\n    \"obsEvento\": \"cenario 3\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.homologacao.websupplyconnect.com/api/Lead/crawler",
+              "protocol": "https",
+              "host": [
+                "api",
+                "homologacao",
+                "websupplyconnect",
+                "com"
+              ],
+              "path": [
+                "api",
+                "Lead",
+                "crawler"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "[SMOKE]   Criação de lead com e-mail válido via integração (sucesso)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "{{apiKey}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \"Lead teste {{tsLead}}\",\r\n    \"email\": \"arthuras1@hotmail.com\",\r\n    \"whatsappNumero\": \"{{whatsapp}}\",\r\n    \"origem\": \"Site Primarca\",\r\n    \"CampanhaCod\": \"\",\r\n    \"CampanhaNome\": \"\",\r\n    \"cnpjEmpresa\": \"63078489000134\",\r\n    \"EmailResponsavel\": null,\r\n    \"obsEvento\": \"cenario 3\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://api.homologacao.websupplyconnect.com/api/Lead/crawler",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "homologacao",
+                    "websupplyconnect",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "Lead",
+                    "crawler"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 15 Jul 2026 18:18:44 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "request-context",
+                  "value": "appId=cid-v1:7d93dc8c-4935-4a9a-a56f-3cc1f303f142"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "nel",
+                  "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+                },
+                {
+                  "key": "report-to",
+                  "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Znvm8KsYHWysqKeeJzmeT7mqMT%2F1HUkAYyF29F0wUrQi0B6i1p%2FHdEh0x6O5cpkEDFdxvEkrGA6fX4runW1L9lu9yIbhXuL2fWvXUsoEyLfdlFJeYj4cE8y6n6bPo%2B%2FHi0dOfNqPGN6ACN%2Bz76qCwNKUyqGErg%3D%3D\"}]}"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a1bac57cede6013a-GRU"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Lead recebido com sucesso.\",\n    \"data\": {},\n    \"error\": null\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "const base = Date.now().toString().slice(-3);\r",
+          "\r",
+          "pm.collectionVariables.set(\"tsLead\", base);\r",
+          "pm.collectionVariables.set(\"whatsapp\", \"119\" + Date.now().toString().slice(-8));"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "whatsapp",
+      "value": ""
+    },
+    {
+      "key": "tsLead",
+      "value": ""
+    }
+  ]
+}
