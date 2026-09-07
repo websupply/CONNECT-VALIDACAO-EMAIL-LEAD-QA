@@ -1,0 +1,123 @@
+[
+  {
+    "timestamp": "16/07/2026, 12:00:24",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/adamcy11/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/29509139548"
+  },
+  {
+    "timestamp": "16/07/2026, 13:39:45",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/29509139548"
+  },
+  {
+    "timestamp": "16/07/2026, 13:47:20",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/29517031781"
+  },
+  {
+    "timestamp": "20/07/2026, 10:06:13",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/29744790139"
+  },
+  {
+    "timestamp": "27/07/2026, 09:05:25",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/30264441363"
+  },
+  {
+    "timestamp": "03/08/2026, 09:06:00",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/30812122272"
+  },
+  {
+    "timestamp": "10/08/2026, 08:25:07",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/31383386809"
+  },
+  {
+    "timestamp": "17/08/2026, 08:07:51",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/32023403894"
+  },
+  {
+    "timestamp": "24/08/2026, 08:10:18",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/32720441140"
+  },
+  {
+    "timestamp": "31/08/2026, 08:10:46",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/33385736513"
+  },
+  {
+    "timestamp": "07/09/2026, 08:11:28",
+    "successRate": 100,
+    "requestsTotal": 3,
+    "requestsFailed": 0,
+    "assertionsTotal": 12,
+    "assertionsFailed": 0,
+    "failuresCount": 0,
+    "status": "ok",
+    "runUrl": "https://github.com/websupply/CONNECT-VALIDACAO-EMAIL-LEAD-QA/actions/runs/34115302010"
+  }
+]
